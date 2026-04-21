@@ -1,0 +1,15 @@
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/bin/Debug/net8.0/MonoPyEngine
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/bin/Debug/net8.0/MonoPyEngine.deps.json
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/bin/Debug/net8.0/MonoPyEngine.runtimeconfig.json
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/bin/Debug/net8.0/MonoPyEngine.dll
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/bin/Debug/net8.0/MonoPyEngine.pdb
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/MonoPyEngine.GeneratedMSBuildEditorConfig.editorconfig
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/MonoPyEngine.AssemblyInfoInputs.cache
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/MonoPyEngine.AssemblyInfo.cs
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/MonoPyEngine.csproj.CoreCompileInputs.cache
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/MonoPyEngine.sourcelink.json
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/MonoPyEngine.dll
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/refint/MonoPyEngine.dll
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/MonoPyEngine.pdb
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/MonoPyEngine.genruntimeconfig.cache
+/home/byte_blast_ahmad_swailem/MonoPy/MonoPyEngine/obj/Debug/net8.0/ref/MonoPyEngine.dll
