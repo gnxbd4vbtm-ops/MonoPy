@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MonoPyEngine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6de49ce32ed836df11e20a210621a0d8525343fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b918c6b15f1b8048125eec66b1a19a95adb3a49a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MonoPyEngine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MonoPyEngine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

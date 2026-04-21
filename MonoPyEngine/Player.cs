@@ -1,30 +1,37 @@
+using System;
+
+#pragma warning disable CS0114
+
 public class Player : GameObject
 {
     // Called when the script instance is being loaded (before Start)
-    public void Awake()
+    private void Awake()
     {
         Debug.Log("Player awakened");
     }
 
     // Called when the object becomes enabled and active
-    public void OnEnable()
+    private void OnEnable()
     {
         Debug.Log("Player enabled");
     }
 
     // Runs once when the object starts
-    public void Start()
+    private void Start()
     {
         Debug.Log("Player started");
     }
 
     // Runs every frame
-    public void Update(float dt)
+    private void Update()
     {
         // Check for input
         if (Input.GetKey(KeyCode.W))
         {
             Debug.Log("W key is pressed");
+        } else if (Input.GetKey(KeyCode.S))
+        {
+            Debug.Log("S key is pressed");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -32,30 +39,29 @@ public class Player : GameObject
             Debug.Log("Space key was pressed this frame");
         }
 
-        // Log time info
-        Debug.Log("Time: " + Time.time + ", DeltaTime: " + Time.deltaTime);
+
     }
 
     // Runs every frame after Update
-    public void LateUpdate(float dt)
+    private void LateUpdate()
     {
         // Camera follow logic would go here
     }
 
     // Runs on fixed timestep
-    public void FixedUpdate(float dt)
+    private void FixedUpdate()
     {
-        Debug.Log("FixedUpdate: " + dt + ", FixedTime: " + Time.fixedTime);
+        // Debug.Log("FixedUpdate: " + dt + ", FixedTime: " + Time.fixedTime);
     }
 
     // Called when the object becomes disabled
-    public override void OnDisable()
+    private void OnDisable()
     {
         Debug.Log("Player disabled");
     }
 
     // Called when the script is being destroyed
-    public override void OnDestroy()
+    private void OnDestroy()
     {
         Debug.Log("Player destroyed");
     }

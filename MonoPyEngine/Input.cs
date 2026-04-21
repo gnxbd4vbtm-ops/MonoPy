@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-// KeyCode enum similar to Unity
 public enum KeyCode
 {
     A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
@@ -11,49 +10,35 @@ public enum KeyCode
     F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12
 }
 
-// Input system for keyboard handling
 public static class Input
 {
-    private static HashSet<KeyCode> currentKeys = new HashSet<KeyCode>();
-    private static HashSet<KeyCode> previousKeys = new HashSet<KeyCode>();
+    private static HashSet<KeyCode> keysHeld = new HashSet<KeyCode>();
+    private static HashSet<KeyCode> keysDown = new HashSet<KeyCode>();
 
-    // Update input state - call this every frame
     public static void Update()
     {
-        previousKeys = new HashSet<KeyCode>(currentKeys);
-        currentKeys.Clear();
+        keysDown.Clear();
+        keysHeld.Clear();
 
-        // Poll for available keys (non-blocking)
         while (Console.KeyAvailable)
         {
-            var key = Console.ReadKey(true);
-            KeyCode? keyCode = KeyToKeyCode(key.Key);
-            if (keyCode.HasValue)
-            {
-                currentKeys.Add(keyCode.Value);
-            }
+            var info = Console.ReadKey(true);
+            KeyCode? kc = KeyToKeyCode(info.Key);
+            if (!kc.HasValue) continue;
+
+            if (!keysHeld.Contains(kc.Value))
+                keysDown.Add(kc.Value);
+
+            keysHeld.Add(kc.Value);
         }
     }
 
-    // Check if key is currently pressed
-    public static bool GetKey(KeyCode key)
-    {
-        return currentKeys.Contains(key);
-    }
+    /// <summary>True every frame the OS is firing events for this key.</summary>
+    public static bool GetKey(KeyCode key)     => keysHeld.Contains(key);
 
-    // Check if key was pressed this frame
-    public static bool GetKeyDown(KeyCode key)
-    {
-        return currentKeys.Contains(key) && !previousKeys.Contains(key);
-    }
+    /// <summary>True only on the first frame the key was pressed.</summary>
+    public static bool GetKeyDown(KeyCode key) => keysDown.Contains(key);
 
-    // Check if key was released this frame
-    public static bool GetKeyUp(KeyCode key)
-    {
-        return !currentKeys.Contains(key) && previousKeys.Contains(key);
-    }
-
-    // Convert ConsoleKey to KeyCode
     private static KeyCode? KeyToKeyCode(ConsoleKey key)
     {
         switch (key)
@@ -84,14 +69,14 @@ public static class Input
             case ConsoleKey.X: return KeyCode.X;
             case ConsoleKey.Y: return KeyCode.Y;
             case ConsoleKey.Z: return KeyCode.Z;
-            case ConsoleKey.Spacebar: return KeyCode.Space;
-            case ConsoleKey.Enter: return KeyCode.Enter;
-            case ConsoleKey.Escape: return KeyCode.Escape;
-            case ConsoleKey.Backspace: return KeyCode.Backspace;
-            case ConsoleKey.Tab: return KeyCode.Tab;
-            case ConsoleKey.UpArrow: return KeyCode.UpArrow;
-            case ConsoleKey.DownArrow: return KeyCode.DownArrow;
-            case ConsoleKey.LeftArrow: return KeyCode.LeftArrow;
+            case ConsoleKey.Spacebar:   return KeyCode.Space;
+            case ConsoleKey.Enter:      return KeyCode.Enter;
+            case ConsoleKey.Escape:     return KeyCode.Escape;
+            case ConsoleKey.Backspace:  return KeyCode.Backspace;
+            case ConsoleKey.Tab:        return KeyCode.Tab;
+            case ConsoleKey.UpArrow:    return KeyCode.UpArrow;
+            case ConsoleKey.DownArrow:  return KeyCode.DownArrow;
+            case ConsoleKey.LeftArrow:  return KeyCode.LeftArrow;
             case ConsoleKey.RightArrow: return KeyCode.RightArrow;
             case ConsoleKey.D0: return KeyCode.Alpha0;
             case ConsoleKey.D1: return KeyCode.Alpha1;
@@ -103,15 +88,15 @@ public static class Input
             case ConsoleKey.D7: return KeyCode.Alpha7;
             case ConsoleKey.D8: return KeyCode.Alpha8;
             case ConsoleKey.D9: return KeyCode.Alpha9;
-            case ConsoleKey.F1: return KeyCode.F1;
-            case ConsoleKey.F2: return KeyCode.F2;
-            case ConsoleKey.F3: return KeyCode.F3;
-            case ConsoleKey.F4: return KeyCode.F4;
-            case ConsoleKey.F5: return KeyCode.F5;
-            case ConsoleKey.F6: return KeyCode.F6;
-            case ConsoleKey.F7: return KeyCode.F7;
-            case ConsoleKey.F8: return KeyCode.F8;
-            case ConsoleKey.F9: return KeyCode.F9;
+            case ConsoleKey.F1:  return KeyCode.F1;
+            case ConsoleKey.F2:  return KeyCode.F2;
+            case ConsoleKey.F3:  return KeyCode.F3;
+            case ConsoleKey.F4:  return KeyCode.F4;
+            case ConsoleKey.F5:  return KeyCode.F5;
+            case ConsoleKey.F6:  return KeyCode.F6;
+            case ConsoleKey.F7:  return KeyCode.F7;
+            case ConsoleKey.F8:  return KeyCode.F8;
+            case ConsoleKey.F9:  return KeyCode.F9;
             case ConsoleKey.F10: return KeyCode.F10;
             case ConsoleKey.F11: return KeyCode.F11;
             case ConsoleKey.F12: return KeyCode.F12;

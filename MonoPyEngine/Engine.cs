@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
+using System.Reflection;
 
 public class Engine
 {
@@ -20,9 +21,9 @@ public class Engine
     {
         // Add object and call Awake once
         objects.Add(obj);
-        obj.Awake();
-        obj.OnEnable();
-        obj.Start();
+        InvokeMethod(obj, "Awake");
+        InvokeMethod(obj, "OnEnable");
+        InvokeMethod(obj, "Start");
     }
 
     public void Run()
@@ -47,11 +48,11 @@ public class Engine
 
             // Call Update on all objects
             foreach (var obj in objects)
-                obj.Update(dt);
+                InvokeMethod(obj, "Update");
 
             // Call LateUpdate on all objects
             foreach (var obj in objects)
-                obj.LateUpdate(dt);
+                InvokeMethod(obj, "LateUpdate");
 
             // Handle FixedUpdate timing
             fixedTimer += dt;
@@ -60,13 +61,22 @@ public class Engine
             {
                 Time.UpdateFixedTime();
                 foreach (var obj in objects)
-                    obj.FixedUpdate(Time.fixedDeltaTime);
+                    InvokeMethod(obj, "FixedUpdate");
 
                 fixedTimer -= Time.fixedDeltaTime;
             }
 
             // Prevent 100% CPU usage
             Thread.Sleep(1);
+        }
+    }
+
+    private void InvokeMethod(GameObject obj, string methodName, params object[] parameters)
+    {
+        var method = obj.GetType().GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null);
+        if (method != null)
+        {
+            method.Invoke(obj, parameters);
         }
     }
 }
