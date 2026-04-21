@@ -14,12 +14,14 @@ public class Engine
     // Time tracking variables
     private double lastTime;
     private double fixedTimer;
-    private double fixedInterval = 0.02; // 50Hz fixed update
+    private double fixedInterval = Time.fixedDeltaTime; // Use Time.fixedDeltaTime
 
     public void Add(GameObject obj)
     {
-        // Add object and call Start once
+        // Add object and call Awake once
         objects.Add(obj);
+        obj.Awake();
+        obj.OnEnable();
         obj.Start();
     }
 
@@ -37,19 +39,30 @@ public class Engine
             float dt = (float)(now - lastTime);
             lastTime = now;
 
+            // Update time
+            Time.UpdateTime();
+
+            // Update input state
+            Input.Update();
+
             // Call Update on all objects
             foreach (var obj in objects)
                 obj.Update(dt);
 
+            // Call LateUpdate on all objects
+            foreach (var obj in objects)
+                obj.LateUpdate(dt);
+
             // Handle FixedUpdate timing
             fixedTimer += dt;
 
-            while (fixedTimer >= fixedInterval)
+            while (fixedTimer >= Time.fixedDeltaTime)
             {
+                Time.UpdateFixedTime();
                 foreach (var obj in objects)
-                    obj.FixedUpdate((float)fixedInterval);
+                    obj.FixedUpdate(Time.fixedDeltaTime);
 
-                fixedTimer -= fixedInterval;
+                fixedTimer -= Time.fixedDeltaTime;
             }
 
             // Prevent 100% CPU usage

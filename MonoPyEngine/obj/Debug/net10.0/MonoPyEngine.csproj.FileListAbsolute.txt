@@ -1,0 +1,15 @@
+/workspaces/MonoPy/MonoPyEngine/bin/Debug/net10.0/MonoPyEngine
+/workspaces/MonoPy/MonoPyEngine/bin/Debug/net10.0/MonoPyEngine.deps.json
+/workspaces/MonoPy/MonoPyEngine/bin/Debug/net10.0/MonoPyEngine.runtimeconfig.json
+/workspaces/MonoPy/MonoPyEngine/bin/Debug/net10.0/MonoPyEngine.dll
+/workspaces/MonoPy/MonoPyEngine/bin/Debug/net10.0/MonoPyEngine.pdb
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/MonoPyEngine.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/MonoPyEngine.AssemblyInfoInputs.cache
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/MonoPyEngine.AssemblyInfo.cs
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/MonoPyEngine.csproj.CoreCompileInputs.cache
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/MonoPyEngine.sourcelink.json
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/MonoPyEngine.dll
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/refint/MonoPyEngine.dll
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/MonoPyEngine.pdb
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/MonoPyEngine.genruntimeconfig.cache
+/workspaces/MonoPy/MonoPyEngine/obj/Debug/net10.0/ref/MonoPyEngine.dll
