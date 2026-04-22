@@ -1,5 +1,7 @@
 using System;
 
+namespace MonoPy;
+
 // Simple logging system
 public static class Debug
 {

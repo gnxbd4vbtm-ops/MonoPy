@@ -1,4 +1,6 @@
-﻿class Program
+﻿using MonoPy;
+
+class Program
 {
     static void Main()
     {

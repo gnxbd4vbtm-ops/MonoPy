@@ -1,8 +1,11 @@
 using System;
+using MonoPy;
+
 
 #pragma warning disable CS0114
 
-public class Player : GameObject
+namespace MonoPy;
+public class Player : MonoPy
 {
     // Called when the script instance is being loaded (before Start)
     private void Awake()

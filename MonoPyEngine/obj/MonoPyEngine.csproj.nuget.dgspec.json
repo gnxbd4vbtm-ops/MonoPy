@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/workspaces/MonoPy/MonoPyEngine/MonoPyEngine.csproj",
-        "projectName": "MonoPyEngine",
+        "projectName": "MonoPy",
         "projectPath": "/workspaces/MonoPy/MonoPyEngine/MonoPyEngine.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
         "outputPath": "/workspaces/MonoPy/MonoPyEngine/obj/",

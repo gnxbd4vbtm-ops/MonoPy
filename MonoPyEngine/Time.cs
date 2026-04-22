@@ -1,5 +1,7 @@
 using System.Diagnostics;
 
+namespace MonoPy;
+
 // Time system for delta time tracking
 public static class Time
 {

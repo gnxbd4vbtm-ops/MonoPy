@@ -4,10 +4,12 @@ using System.Diagnostics;
 using System.Threading;
 using System.Reflection;
 
+namespace MonoPy;
+
 public class Engine
 {
     // List of all objects in the engine
-    public List<GameObject> objects = new();
+    public List<MonoPy> objects = new();
 
     // Stopwatch used for timing
     private Stopwatch sw = Stopwatch.StartNew();
@@ -17,7 +19,7 @@ public class Engine
     private double fixedTimer;
     private double fixedInterval = Time.fixedDeltaTime; // Use Time.fixedDeltaTime
 
-    public void Add(GameObject obj)
+    public void Add(MonoPy obj)
     {
         // Add object and call Awake once
         objects.Add(obj);
@@ -71,7 +73,7 @@ public class Engine
         }
     }
 
-    private void InvokeMethod(GameObject obj, string methodName, params object[] parameters)
+    private void InvokeMethod(MonoPy obj, string methodName, params object[] parameters)
     {
         var method = obj.GetType().GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null);
         if (method != null)

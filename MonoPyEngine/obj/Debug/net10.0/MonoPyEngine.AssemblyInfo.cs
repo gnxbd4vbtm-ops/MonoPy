@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("MonoPyEngine")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Byte Blast")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("A simple game engine for C# that tries to copy unity\'s MonoBehaviour ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b918c6b15f1b8048125eec66b1a19a95adb3a49a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+414e03772279cd978482df39a787305db24a2ece")]
 [assembly: System.Reflection.AssemblyProductAttribute("MonoPyEngine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MonoPyEngine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

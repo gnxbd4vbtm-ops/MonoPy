@@ -1,4 +1,6 @@
-public class GameObject
+namespace MonoPy;
+
+public class MonoPy
 {
     // Called when the script instance is being loaded (before Start)
     public virtual void Awake() { }
